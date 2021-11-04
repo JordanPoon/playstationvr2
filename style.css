@@ -1,0 +1,630 @@
+/* fonts */
+
+@font-face {
+    font-family: "Bizmo-Bold";
+    src: url("fonts/Bizmo\ Bold.ttf")
+}
+
+@font-face {
+    font-family: "Bizmo-Regular";
+    src: url("fonts/Bizmo\ Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("fonts/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter-SemiBold";
+    src: url("fonts/Inter-SemiBold.ttf")
+}
+
+/* base tags */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; 
+    font-family: "Inter-Regular";   
+}
+img {
+    pointer-events: none;
+}
+p { 
+    font-size: 1.4vw;
+    color: #6A6F78;
+    line-height: 2.5vw;
+}
+h1, h2 {
+    margin: 0;
+	padding: 0;
+}
+
+/* homepage */
+
+.homepage {
+    height: 100vh;
+    width: 100vw;
+}
+
+.headset-img {
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.playstation-icon {
+    display: flex;
+    height: 2vw;
+    transform: translate(50vw,2vh); 
+}
+
+.controllers-img {
+    position: absolute;
+    width: 100%;
+}
+
+.tagline-container {
+    position: absolute;
+    margin: 4vw 8vw
+}
+
+.tagline {
+    font-family: "Bizmo-Bold";
+    color: #21242F;
+    font-size: 7vw;
+}
+
+.tagline-subtitle {
+    font-family: "Bizmo-Regular";
+    color: #21242F;
+    margin-top: 1.5vw;
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.buy-button {
+    font-family: "Inter-Regular";
+    cursor: pointer;
+    background-color: #103179;
+    border: none;
+    color: white;
+    padding: 14px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: ease 0.4s;
+    margin-left: 50%;
+    transform: translate(-50%)
+}
+
+.black-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: #000;
+    pointer-events: none;
+}
+
+/* headset-features */
+
+.headset-features {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    overflow: hidden;
+}
+
+.pano-image{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.foveated-container {
+    position: absolute;
+    top: 0;
+    transform: translate(5vw, 20vh);
+    color: white;
+    pointer-events: none;
+}
+
+.foveated-alignment {
+    align-items: center;
+    justify-content: center;
+}
+
+.headset-features-button {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-bottom: 2vw;
+    opacity: 0;
+    transform: translate(-50%);
+    pointer-events: visible;
+    animation: headset-features-button-pulse 2s infinite;
+}
+
+.headset-features-button:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+.plus-icon {
+    height: 100%;
+    width: 100%;
+    color: black;
+    transition: 1s;
+}
+
+.rotate-45deg {
+    transform: translate(-50%) rotate(45deg);
+}
+
+.foveated-rendering {
+    display: flex;
+    width: 22vw;
+    font-size: 1.3vw;
+    line-height: 1.4;
+    color: white;
+    text-align: center;
+    padding: 2vw;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .3); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.high-end-visuals {
+    position: absolute;
+    top: 0;
+    color: white;
+    pointer-events: none;
+    transform: translate(70vw, 55vh);
+}
+
+.streamlined-headset {
+    position: absolute;
+    top: 0;
+    color: white;
+    pointer-events: none;
+    transform: translate(50vw, 10vh);
+}
+
+.pano-exit {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 5vw;
+    color: white;
+    font-size: 1.6vw;
+    opacity: 0;
+    transform: translate(-50%);
+    background: none;
+    border: none;
+}
+
+.pano-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.show {
+    opacity: 1;
+    transition: 0.5s;
+    pointer-events: visible;
+}
+
+.hide {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pano-tagline-style {
+    font-family: "Bizmo-Bold";
+    color: white;
+    font-size: 5vw;
+    margin-bottom: 2vh;
+}
+
+.pano-enter {
+    font-family: "Inter-Regular";
+    background-color: #103179;
+    border: none;
+    color: white;
+    padding: 14px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 50px;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: ease 0.4s;
+    margin-left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+/* controllers */
+
+.controllers {
+    height: 100vh;
+}
+
+.controllers-header {
+    font-family: "Bizmo-Bold";
+    color: #21242F;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 700;
+    padding-top: 10vh;
+}
+
+.controller-left-img {
+    position: absolute;
+    height: 40vw;
+    transform: translate(10vw, 30vh);
+}
+
+.controller-right-img {
+    position: absolute;
+    height: 25vw;
+    transform: translate(55vw, 20vh)   
+}
+
+.controller-left-button {
+    position: absolute;
+    background-color: #103179;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(18vw, 80vh);
+    animation: controller-button-pulse 2s infinite;
+}
+
+.controller-right-button {
+    position: absolute;
+    background-color: #103179;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(55vw, 40vh);
+    animation: controller-button-pulse 2s infinite;
+}
+
+.haptic-feedback{
+    position: absolute;
+    width: 30vw;
+    opacity: 0;
+    transition: ease 0.5s;
+    transform: translate(52vw, 30vh)
+}
+
+.haptic-feedback-show{
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+.adaptive-triggers{
+    position: absolute;
+    width: 40vw;
+    opacity: 0;
+    transition: ease 0.5s;
+    transform: translate(15vw, 30vh)
+}
+
+.adaptive-triggers-show{
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+.subtitle {
+    font-family: "Bizmo-Bold";
+    color: #21242F;
+    font-size: 2.8vw;
+}
+
+.elastic-position {
+    transform: translate(78vw, -20vh);
+    width: 60vw;
+}
+
+/* new vr games */
+
+.vr-games-section {
+    height: 50vw;
+}
+
+.vr-games-header {
+    position: absolute;
+    padding-left: 5vw; 
+    z-index: 1;
+    background: white;  
+}
+
+.ps5-console-img {
+    height: 50vw;
+}
+
+.vr-games-container {
+    display: flex;
+}
+
+.vr-games-title {
+    font-family: "Bizmo-Bold";
+    color: #21242F;
+    font-size: 5vw;
+    font-weight: 800;
+    margin-right: 2vw;
+}
+
+.splide__arrow {
+    z-index: 10 !important;
+    transition: ease 0.4s !important; 
+}
+
+.splide-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    font-size: 1.2vw;
+    background-color: #103179;
+    height: 25vw; 
+}
+
+.footer-segment {
+    width: 25%;
+    margin-top: 4vw;
+    margin-right: 5vw;
+}
+
+.footer-first-segment {
+    margin-top: 4vw;
+    margin-left: 4vw;
+    width: 40%;
+    font-size: 2vw;
+    font-family: "Bizmo-Bold";
+    color: white;
+}
+
+.footer-icon {
+    width: 6vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.sony-subtitle {
+    font-size: 1vw;
+}
+
+.subscribe {
+    font-family: "Inter-SemiBold";
+    color: white;
+    margin-bottom: 1vw;
+    opacity: 50%;
+}
+
+.menu-title {
+    opacity: 50%;
+    font-family: "Inter-SemiBold";
+}
+
+.menu-option {
+    color: white;
+    margin-bottom: 2vw;
+}
+
+
+/* pulsing animations */
+
+@keyframes controller-button-pulse {
+
+    0% {
+      /* transform: scale(0.95); */
+      box-shadow: 0 0 0 0 #10317977;
+
+    }
+    
+    70% {
+      /* transform: scale(1); */
+      box-shadow: 0 0 0 50px rgba(0, 0, 0, 0);
+    }
+    
+    100% {
+      /* transform: scale(0.95); */
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes headset-features-button-pulse {
+    0% {
+      /* transform: scale(0.95); */
+      box-shadow: 0 0 0 0 #ffffff7e;
+
+    }
+    
+    70% {
+      /* transform: scale(1); */
+      box-shadow: 0 0 0 50px rgba(0, 0, 0, 0);
+    }
+    
+    100% {
+      /* transform: scale(0.95); */
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* adaptive trigger elastic svg animation */
+
+/***************************************************
+ * Generated by SVG Artista on 10/28/2021, 12:47:20 AM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+
+ svg .svg-elem-1 {
+    stroke-dashoffset: 1196.698486328125px;
+    stroke-dasharray: 1196.698486328125px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0s;
+            transition: stroke-dashoffset 0.5s ease-in 0s;
+  }
+  
+  svg.active .svg-elem-1 {
+    stroke-dashoffset: 2393.39697265625px;
+  }
+  
+  svg .svg-elem-2 {
+    stroke-dashoffset: 1083.924560546875px;
+    stroke-dasharray: 1083.924560546875px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.02s;
+            transition: stroke-dashoffset 0.5s ease-in 0.02s;
+  }
+  
+  svg.active .svg-elem-2 {
+    stroke-dashoffset: 2167.84912109375px;
+  }
+  
+  svg .svg-elem-3 {
+    stroke-dashoffset: 595.0747680664062px;
+    stroke-dasharray: 595.0747680664062px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.04s;
+            transition: stroke-dashoffset 0.5s ease-in 0.04s;
+  }
+  
+  svg.active .svg-elem-3 {
+    stroke-dashoffset: 1190.1495361328125px;
+  }
+  
+  svg .svg-elem-4 {
+    stroke-dashoffset: 668.7989501953125px;
+    stroke-dasharray: 668.7989501953125px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.06s;
+            transition: stroke-dashoffset 0.5s ease-in 0.06s;
+  }
+  
+  svg.active .svg-elem-4 {
+    stroke-dashoffset: 1337.597900390625px;
+  }
+  
+  svg .svg-elem-5 {
+    stroke-dashoffset: 707.7086181640625px;
+    stroke-dasharray: 707.7086181640625px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.08s;
+            transition: stroke-dashoffset 0.5s ease-in 0.08s;
+  }
+  
+  svg.active .svg-elem-5 {
+    stroke-dashoffset: 1415.417236328125px;
+  }
+  
+  svg .svg-elem-6 {
+    stroke-dashoffset: 686.3043823242188px;
+    stroke-dasharray: 686.3043823242188px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.1s;
+            transition: stroke-dashoffset 0.5s ease-in 0.1s;
+  }
+  
+  svg.active .svg-elem-6 {
+    stroke-dashoffset: 1372.6087646484375px;
+  }
+  
+  svg .svg-elem-7 {
+    stroke-dashoffset: 714.068115234375px;
+    stroke-dasharray: 714.068115234375px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.12s;
+            transition: stroke-dashoffset 0.5s ease-in 0.12s;
+  }
+  
+  svg.active .svg-elem-7 {
+    stroke-dashoffset: 1428.13623046875px;
+  }
+  
+  svg .svg-elem-8 {
+    stroke-dashoffset: 1072.957763671875px;
+    stroke-dasharray: 1072.957763671875px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.14s;
+            transition: stroke-dashoffset 0.5s ease-in 0.14s;
+  }
+  
+  svg.active .svg-elem-8 {
+    stroke-dashoffset: 2145.91552734375px;
+  }
+  
+  svg .svg-elem-9 {
+    stroke-dashoffset: 1098.5562744140625px;
+    stroke-dasharray: 1098.5562744140625px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.16s;
+            transition: stroke-dashoffset 0.5s ease-in 0.16s;
+  }
+  
+  svg.active .svg-elem-9 {
+    stroke-dashoffset: 2197.112548828125px;
+  }
+  
+  svg .svg-elem-10 {
+    stroke-dashoffset: 1120.1268310546875px;
+    stroke-dasharray: 1120.1268310546875px;
+    -webkit-transition: stroke-dashoffset 0.5s ease-in 0.18s;
+            transition: stroke-dashoffset 0.5s ease-in 0.18s;
+  }
+  
+  svg.active .svg-elem-10 {
+    stroke-dashoffset: 2240.253662109375px;
+  }
+
+
+  @media only screen and (max-width: 768px) { /* mobile styling */
+
+    /* .homepage {
+        display: none;
+    }
+
+    .headset-features {
+        display: none;
+    }
+
+    .controllers {
+        display: none;
+    } */
+
+  }
